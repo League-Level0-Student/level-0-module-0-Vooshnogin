@@ -25,10 +25,10 @@ rob.penDown();
     	//        The start value will be zero because no sides have yet been drawn. Use this code:
 		  /**     int count = 0;    **/
     	int count = 0;
-
+while ( count < 4 ) {
         // DRAW.  Draw a line. Use this command:
     		  /**     rob.move();    **/
-  rob.move(500);
+  rob.move(100);
 
 	// TURN.  Turn 90 degrees. Use this command:
     		  /**     rob.turn();    **/
@@ -36,8 +36,8 @@ rob.turn(90);
     	
     	// INCREASE COUNT. Add one to the number of sides that have now been drawn like this:
     		  /**     count += 1;    **/
-
-    	
+count += 1;
+}
     	// Run the program. Did the Robot draw a line and turn?
     	 
     	
