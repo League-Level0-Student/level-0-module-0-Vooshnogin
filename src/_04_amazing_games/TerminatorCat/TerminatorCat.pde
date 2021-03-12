@@ -9,8 +9,8 @@
 // This line of code creates a variable to hold your faccate picture
 // You will use it later.
 PImage cat;
-int x=0;
-int y=0;
+
+
 
 void setup() {
   
@@ -19,12 +19,12 @@ void setup() {
 cat = loadImage("cat.jpg");
   
 // 3. Set the size of the sketch. Make it big enough to show the cat you chose.
-
+size(500,500);
 // 4. Resize the cat so it is the same size as the sketch
-
+cat.resize(500,500);
 // 5. DRAW CAT.    Use the background() command to make the cat the background of the sketch
 //    Run the program to see if the cat is drawn. Get this working before you go on.
- 
+ background(cat);
 
   }
 
@@ -43,6 +43,7 @@ void draw() {
 
 // 8. DRAW CIRCLES.
 //     The circles will have black lines around them by default. Put noStroke(); here to remove them.
+noStroke();
 
 // 9.  COLOR.  Set the color of your ellipse to the laser color you would like
 //    Remember to use the   fill()  command to set colors.
@@ -51,17 +52,30 @@ void draw() {
 // 10 Use the ellipse() command to draw a circle on the eye (you will have to guess its size). 
 //    Use the x and y variables you just created to place the ellipse in the correct location.
 //                  The ellipse command looks like this:
-                ellipse(x, y, width, height);
+              fill(#FF0303); ellipse(x, y, 50, 50);
+              fill(#FF0303); ellipse(x1, y, 50, 50);
 // Run the program to make sure it is in the right place and is the right size.
 }
-
+int x = 217;
+int y = 180;
+int x1 = 300;
 // 11.  LASER BEAM.  This code will make your ellipse move down and to the right when you press 
 //      the space bar. Run the program to test it.
 //      If you want it to move to the left, change to x-1=.
 void keyPressed() {
-    x+=1;
-    y+=1;
+    x+=-5;
+    y+=5;
+    x1+=-5;
     
+    if(x > width) {
+      x=217;
+    }
+    if(x1 > width) {
+      x1=300;
+    }
+    if(y > width) {
+      y=180;
+    }
 // 12.  If you want them to go faster, add more than one each time the key is pressed    
 }
  
@@ -75,3 +89,5 @@ void keyPressed() {
 //     You will need  an if statement to check when x > width 
 //     Then set x and y back to their original values and re-draw the cat
 //     background(cat);
+
+ 
